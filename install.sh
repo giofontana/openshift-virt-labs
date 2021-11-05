@@ -458,6 +458,7 @@ else
 	scp -o StrictHostKeyChecking=no configs/cnv.example.com.db root@192.168.123.100:/var/named/cnv.example.com.db
 fi
 
+ssh -o StrictHostKeyChecking=no root@192.168.123.100 'chown named:named -R /var/named/*'
 scp -o StrictHostKeyChecking=no configs/squid.conf root@192.168.123.100:/etc/squid/squid.conf
 scp -o StrictHostKeyChecking=no configs/named.conf root@192.168.123.100:/etc/named.conf
 
